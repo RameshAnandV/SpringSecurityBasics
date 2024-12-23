@@ -33,9 +33,9 @@ public class AuthSecurityConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user1 = User.withUsername("ranand").password("{noop} password").roles(String.valueOf(Roles.USER)).build();
-        UserDetails user2 = User.withUsername("ranand_admin").password("{noop} password").roles(String.valueOf(Roles.ADMIN)).build();
-        UserDetails user3 = User.withUsername("ranand_ops").password("{noop} password").roles(String.valueOf(Roles.OPSADMIN)).build();
-        return new InMemoryUserDetailsManager();
+        UserDetails user1 = User.withUsername("ranand").password("{noop}password").roles(String.valueOf(Roles.USER)).build();
+        UserDetails user2 = User.withUsername("ranand_admin").password("{noop}password").roles(String.valueOf(Roles.ADMIN)).build();
+        UserDetails user3 = User.withUsername("ranand_ops").password("{noop}password").roles(String.valueOf(Roles.OPSADMIN)).build();
+        return new InMemoryUserDetailsManager(user1, user2, user3);
     }
 }
